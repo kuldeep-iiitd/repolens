@@ -1,0 +1,878 @@
+{
+ "repo": "psf/requests",
+ "snapshots": [
+  {
+   "sha": "0d07d1af",
+   "date": "2013-03-22",
+   "n_files": 70,
+   "modules": [
+    {
+     "name": "Core HTTP Interface",
+     "summary": "High-level API, session management, request/response models, hooks, and exception hierarchies.",
+     "files": [
+      {
+       "path": "requests/__init__.py",
+       "summary": "Initializes the Requests package and exports the public API symbols."
+      },
+      {
+       "path": "requests/api.py",
+       "summary": "Provides simple functional entry points like get, post, and request."
+      },
+      {
+       "path": "requests/exceptions.py",
+       "summary": "Defines custom exception classes for HTTP and network errors."
+      },
+      {
+       "path": "requests/hooks.py",
+       "summary": "Implements event hook registration and dispatch mechanisms."
+      },
+      {
+       "path": "requests/models.py",
+       "summary": "Defines core Request, PreparedRequest, and Response data models."
+      },
+      {
+       "path": "requests/sessions.py",
+       "summary": "Provides Session objects for maintaining state and configuration across requests."
+      },
+      {
+       "path": "requests/status_codes.py",
+       "summary": "Defines named lookup mappings for standard HTTP status codes."
+      }
+     ]
+    },
+    {
+     "name": "Transport & Authentication",
+     "summary": "Transport adapters connecting sessions to network engines, SSL certificates, and authentication handlers.",
+     "files": [
+      {
+       "path": "requests/adapters.py",
+       "summary": "Implements transport adapters bridging Requests to underlying connection pools like urllib3."
+      },
+      {
+       "path": "requests/auth.py",
+       "summary": "Provides HTTP authentication handlers including Basic and Digest auth."
+      },
+      {
+       "path": "requests/certs.py",
+       "summary": "Locates default CA certificate bundles for TLS verification."
+      }
+     ]
+    },
+    {
+     "name": "Utilities & Helpers",
+     "summary": "Cross-platform compatibility, cookie management, shared collections, and helper utilities.",
+     "files": [
+      {
+       "path": "requests/compat.py",
+       "summary": "Abstracts differences between Python 2 and Python 3 environments."
+      },
+      {
+       "path": "requests/cookies.py",
+       "summary": "Compatibility layer and utilities for cookie handling and CookieJar conversion."
+      },
+      {
+       "path": "requests/structures.py",
+       "summary": "Supplies custom data structures such as CaseInsensitiveDict and LookupDict."
+      },
+      {
+       "path": "requests/utils.py",
+       "summary": "General helper functions for header parsing, URL manipulation, and environment checks."
+      }
+     ]
+    },
+    {
+     "name": "Vendored Dependencies: urllib3",
+     "summary": "Vendored urllib3 library managing connection pools, HTTP socket requests, and SSL validation.",
+     "files": [
+      {
+       "path": "requests/packages/__init__.py",
+       "summary": "Package marker exposing bundled vendor dependencies."
+      },
+      {
+       "path": "requests/packages/urllib3/__init__.py",
+       "summary": "Top-level exports for the vendored urllib3 library."
+      },
+      {
+       "path": "requests/packages/urllib3/_collections.py",
+       "summary": "Internal collections like RecentlyUsedContainer (LRU cache) for connection pooling."
+      },
+      {
+       "path": "requests/packages/urllib3/connectionpool.py",
+       "summary": "Manages HTTP and HTTPS connection reuse and thread safety."
+      },
+      {
+       "path": "requests/packages/urllib3/contrib/__init__.py",
+       "summary": "Package marker for urllib3 contributed add-ons."
+      },
+      {
+       "path": "requests/packages/urllib3/contrib/ntlmpool.py",
+       "summary": "NTLM authentication connection pool extension."
+      },
+      {
+       "path": "requests/packages/urllib3/exceptions.py",
+       "summary": "Exception definitions native to urllib3."
+      },
+      {
+       "path": "requests/packages/urllib3/filepost.py",
+       "summary": "Multipart/form-data encoding routines for file uploading."
+      },
+      {
+       "path": "requests/packages/urllib3/packages/__init__.py",
+       "summary": "Package marker for dependencies nested inside urllib3."
+      },
+      {
+       "path": "requests/packages/urllib3/packages/ordered_dict.py",
+       "summary": "Backported OrderedDict for older Python versions."
+      },
+      {
+       "path": "requests/packages/urllib3/packages/six.py",
+       "summary": "Embedded six utility library for Python 2/3 compatibility within urllib3."
+      },
+      {
+       "path": "requests/packages/urllib3/packages/ssl_match_hostname/__init__.py",
+       "summary": "Backport of Python 3.2 SSL hostname matching logic."
+      },
+      {
+       "path": "requests/packages/urllib3/poolmanager.py",
+       "summary": "High-level pool manager coordinating multiple connection pools and proxy handling."
+      },
+      {
+       "path": "requests/packages/urllib3/request.py",
+       "summary": "Convenience mixin for generating and encoding HTTP request methods."
+      },
+      {
+       "path": "requests/packages/urllib3/response.py",
+       "summary": "Low-level HTTP response stream and decompression handling."
+      },
+      {
+       "path": "requests/packages/urllib3/util.py",
+       "summary": "Network, SSL context, and socket utilities for urllib3."
+      }
+     ]
+    },
+    {
+     "name": "Vendored Dependencies: Charade",
+     "summary": "Vendored character encoding detection library port derived from chardet.",
+     "files": [
+      {
+       "path": "requests/packages/charade/__init__.py",
+       "summary": "Entry point exposing character encoding auto-detection."
+      },
+      {
+       "path": "requests/packages/charade/big5freq.py",
+       "summary": "Character frequency tables for Big5 Chinese encoding."
+      },
+      {
+       "path": "requests/packages/charade/big5prober.py",
+       "summary": "Character set prober for Big5 encoding."
+      },
+      {
+       "path": "requests/packages/charade/chardistribution.py",
+       "summary": "Base statistical character distribution analyzers."
+      },
+      {
+       "path": "requests/packages/charade/charsetgroupprober.py",
+       "summary": "Composite prober grouping multiple charset probers together."
+      },
+      {
+       "path": "requests/packages/charade/charsetprober.py",
+       "summary": "Abstract base class for character set detection probers."
+      },
+      {
+       "path": "requests/packages/charade/codingstatemachine.py",
+       "summary": "State machine for checking character state transitions."
+      },
+      {
+       "path": "requests/packages/charade/compat.py",
+       "summary": "Python 2 and 3 helper functions for charade."
+      },
+      {
+       "path": "requests/packages/charade/constants.py",
+       "summary": "Constant values and probing states for character detection."
+      },
+      {
+       "path": "requests/packages/charade/escprober.py",
+       "summary": "Detector for ISO-2022 and escape-sequence encodings."
+      },
+      {
+       "path": "requests/packages/charade/escsm.py",
+       "summary": "State machine tables for escape sequence character sets."
+      },
+      {
+       "path": "requests/packages/charade/eucjpprober.py",
+       "summary": "Detector prober for Japanese EUC-JP encoding."
+      },
+      {
+       "path": "requests/packages/charade/euckrfreq.py",
+       "summary": "Frequency statistics table for Korean EUC-KR encoding."
+      },
+      {
+       "path": "requests/packages/charade/euckrprober.py",
+       "summary": "Detector prober for Korean EUC-KR encoding."
+      },
+      {
+       "path": "requests/packages/charade/euctwfreq.py",
+       "summary": "Frequency statistics table for Traditional Chinese EUC-TW encoding."
+      },
+      {
+       "path": "requests/packages/charade/euctwprober.py",
+       "summary": "Detector prober for Traditional Chinese EUC-TW encoding."
+      },
+      {
+       "path": "requests/packages/charade/gb2312freq.py",
+       "summary": "Frequency statistics table for Simplified Chinese GB2312 encoding."
+      },
+      {
+       "path": "requests/packages/charade/gb2312prober.py",
+       "summary": "Detector prober for Simplified Chinese GB2312 encoding."
+      },
+      {
+       "path": "requests/packages/charade/hebrewprober.py",
+       "summary": "Detector prober for visual and logical Hebrew encodings."
+      },
+      {
+       "path": "requests/packages/charade/jisfreq.py",
+       "summary": "Frequency statistics table for Japanese shift-JIS and EUC-JP."
+      },
+      {
+       "path": "requests/packages/charade/jpcntx.py",
+       "summary": "Contextual analysis for Japanese character encodings."
+      },
+      {
+       "path": "requests/packages/charade/langbulgarianmodel.py",
+       "summary": "Language model tables for Bulgarian encodings."
+      },
+      {
+       "path": "requests/packages/charade/langcyrillicmodel.py",
+       "summary": "Language model tables for Cyrillic encodings."
+      },
+      {
+       "path": "requests/packages/charade/langgreekmodel.py",
+       "summary": "Language model tables for Greek encodings."
+      },
+      {
+       "path": "requests/packages/charade/langhebrewmodel.py",
+       "summary": "Language model tables for Hebrew encodings."
+      },
+      {
+       "path": "requests/packages/charade/langhungarianmodel.py",
+       "summary": "Language model tables for Hungarian encodings."
+      },
+      {
+       "path": "requests/packages/charade/langthaimodel.py",
+       "summary": "Language model tables for Thai encodings."
+      },
+      {
+       "path": "requests/packages/charade/latin1prober.py",
+       "summary": "Detector prober for Latin1/windows-1252 encodings."
+      },
+      {
+       "path": "requests/packages/charade/mbcharsetprober.py",
+       "summary": "General detector prober for multi-byte character sets."
+      },
+      {
+       "path": "requests/packages/charade/mbcsgroupprober.py",
+       "summary": "Composite prober for common multi-byte Asian character sets."
+      },
+      {
+       "path": "requests/packages/charade/mbcssm.py",
+       "summary": "State machine transitions for multi-byte character set probers."
+      },
+      {
+       "path": "requests/packages/charade/sbcharsetprober.py",
+       "summary": "Detector prober for single-byte character sets based on language models."
+      },
+      {
+       "path": "requests/packages/charade/sbcsgroupprober.py",
+       "summary": "Composite prober managing single-byte character set models."
+      },
+      {
+       "path": "requests/packages/charade/sjisprober.py",
+       "summary": "Detector prober for Shift-JIS encoding."
+      },
+      {
+       "path": "requests/packages/charade/universaldetector.py",
+       "summary": "Core detector orchestrating individual probers to identify encoding."
+      },
+      {
+       "path": "requests/packages/charade/utf8prober.py",
+       "summary": "Detector prober for UTF-8 encoding validity."
+      }
+     ]
+    },
+    {
+     "name": "Documentation & Packaging",
+     "summary": "Project packaging, installation configuration, and Sphinx documentation assets.",
+     "files": [
+      {
+       "path": "docs/_themes/flask_theme_support.py",
+       "summary": "Pygments styling support for the documentation theme."
+      },
+      {
+       "path": "docs/conf.py",
+       "summary": "Sphinx documentation build configuration."
+      },
+      {
+       "path": "setup.py",
+       "summary": "Distribution and installation setup script."
+      }
+     ]
+    },
+    {
+     "name": "Test Suite",
+     "summary": "Automated unit and integration test suite executing requests against HTTP endpoints.",
+     "files": [
+      {
+       "path": "test_requests.py",
+       "summary": "Comprehensive test cases verifying request methods, authentication, and headers."
+      }
+     ]
+    }
+   ],
+   "edges": [
+    [
+     "Documentation & Packaging",
+     "Core HTTP Interface",
+     2
+    ],
+    [
+     "Transport & Authentication",
+     "Utilities & Helpers",
+     6
+    ],
+    [
+     "Transport & Authentication",
+     "Core HTTP Interface",
+     2
+    ],
+    [
+     "Transport & Authentication",
+     "Vendored Dependencies: urllib3",
+     3
+    ],
+    [
+     "Utilities & Helpers",
+     "Vendored Dependencies: urllib3",
+     2
+    ],
+    [
+     "Core HTTP Interface",
+     "Transport & Authentication",
+     2
+    ],
+    [
+     "Core HTTP Interface",
+     "Utilities & Helpers",
+     8
+    ],
+    [
+     "Core HTTP Interface",
+     "Vendored Dependencies: urllib3",
+     1
+    ],
+    [
+     "Utilities & Helpers",
+     "Core HTTP Interface",
+     1
+    ],
+    [
+     "Test Suite",
+     "Core HTTP Interface",
+     1
+    ],
+    [
+     "Test Suite",
+     "Transport & Authentication",
+     1
+    ],
+    [
+     "Test Suite",
+     "Utilities & Helpers",
+     1
+    ]
+   ],
+   "reading_order": [
+    "requests/__init__.py",
+    "requests/api.py",
+    "requests/sessions.py",
+    "requests/models.py",
+    "requests/adapters.py",
+    "requests/auth.py",
+    "test_requests.py"
+   ],
+   "change_note": "Initial architectural snapshot featuring core HTTP API, Transport Adapters over vendored urllib3, vendored charade encoding detection, and common utilities."
+  },
+  {
+   "sha": "267ec2f9",
+   "date": "2017-05-27",
+   "n_files": 33,
+   "modules": [
+    {
+     "name": "Core HTTP Interface",
+     "summary": "Primary user-facing APIs, request/response models, sessions, and status code lookups.",
+     "files": [
+      {
+       "path": "requests/__init__.py",
+       "summary": "Primary package entry point exposing public functions, classes, and metadata."
+      },
+      {
+       "path": "requests/api.py",
+       "summary": "High-level HTTP convenience functions such as get, post, put, and delete."
+      },
+      {
+       "path": "requests/exceptions.py",
+       "summary": "Custom exception hierarchy for HTTP and transport errors."
+      },
+      {
+       "path": "requests/hooks.py",
+       "summary": "Event hook dispatch mechanism for request and response processing."
+      },
+      {
+       "path": "requests/models.py",
+       "summary": "Core Request, PreparedRequest, and Response representation objects."
+      },
+      {
+       "path": "requests/sessions.py",
+       "summary": "Session management providing cookie persistence, connection pooling, and configuration."
+      },
+      {
+       "path": "requests/status_codes.py",
+       "summary": "Named status code mappings and dictionary lookup utilities."
+      }
+     ]
+    },
+    {
+     "name": "Transport & Authentication",
+     "summary": "Transport adapters managing low-level network connections and authentication strategies.",
+     "files": [
+      {
+       "path": "requests/adapters.py",
+       "summary": "Transport adapter implementations bridging Requests to urllib3 connection pools."
+      },
+      {
+       "path": "requests/auth.py",
+       "summary": "Authentication handlers including HTTP Basic and HTTP Digest schemes."
+      },
+      {
+       "path": "requests/certs.py",
+       "summary": "Provides the path to the default CA certificate bundle from certifi."
+      }
+     ]
+    },
+    {
+     "name": "Utilities & Helpers",
+     "summary": "Internal helpers, data structures, cookie jars, cross-version compatibility, and packaging shims.",
+     "files": [
+      {
+       "path": "requests/__version__.py",
+       "summary": "Package metadata defining title, version number, author, and license."
+      },
+      {
+       "path": "requests/_internal_utils.py",
+       "summary": "Minimal internal string and encoding manipulation utilities."
+      },
+      {
+       "path": "requests/compat.py",
+       "summary": "Python 2 and 3 compatibility layer for standard library imports."
+      },
+      {
+       "path": "requests/cookies.py",
+       "summary": "CookieJar compatibility helpers and dictionary-to-cookie conversion utilities."
+      },
+      {
+       "path": "requests/packages.py",
+       "summary": "Compatibility aliases for external dependencies such as urllib3, chardet, and idna."
+      },
+      {
+       "path": "requests/structures.py",
+       "summary": "Specialized data structures including CaseInsensitiveDict and LookupDict."
+      },
+      {
+       "path": "requests/utils.py",
+       "summary": "General-purpose helper functions for URL parsing, header extraction, and proxy detection."
+      }
+     ]
+    },
+    {
+     "name": "Documentation & Packaging",
+     "summary": "Sphinx documentation configurations, theme extensions, and package installation scripts.",
+     "files": [
+      {
+       "path": "docs/_static/konami.js",
+       "summary": "JavaScript easter egg script included in static documentation assets."
+      },
+      {
+       "path": "docs/_themes/flask_theme_support.py",
+       "summary": "Pygments styling and theme extensions for Sphinx documentation."
+      },
+      {
+       "path": "docs/conf.py",
+       "summary": "Sphinx build configuration file for generating Requests documentation."
+      },
+      {
+       "path": "setup.py",
+       "summary": "Standard distribution setup script and test command integration."
+      }
+     ]
+    },
+    {
+     "name": "Test Suite",
+     "summary": "Pytest configuration, test suites, mock HTTP servers, and testing helpers.",
+     "files": [
+      {
+       "path": "tests/__init__.py",
+       "summary": "Initialization file configuring warnings for the test suite."
+      },
+      {
+       "path": "tests/compat.py",
+       "summary": "Compatibility helpers and string utilities for test execution across Python versions."
+      },
+      {
+       "path": "tests/conftest.py",
+       "summary": "Pytest fixtures providing configured local test servers."
+      },
+      {
+       "path": "tests/test_hooks.py",
+       "summary": "Unit tests verifying hook registration and execution order."
+      },
+      {
+       "path": "tests/test_lowlevel.py",
+       "summary": "Low-level socket tests for chunked transfer encoding and redirect authentication."
+      },
+      {
+       "path": "tests/test_requests.py",
+       "summary": "Primary test suite covering API requests, responses, redirects, and error handling."
+      },
+      {
+       "path": "tests/test_structures.py",
+       "summary": "Unit tests for custom collection structures like CaseInsensitiveDict."
+      },
+      {
+       "path": "tests/test_testserver.py",
+       "summary": "Unit tests verifying the embedded test server behavior."
+      },
+      {
+       "path": "tests/test_utils.py",
+       "summary": "Unit tests for utility functions including header parsing, proxy checking, and lengths."
+      },
+      {
+       "path": "tests/testserver/__init__.py",
+       "summary": "Initialization file for the internal test server module."
+      },
+      {
+       "path": "tests/testserver/server.py",
+       "summary": "Lightweight socket-based HTTP test server running in background threads."
+      },
+      {
+       "path": "tests/utils.py",
+       "summary": "Test helper context managers such as environment variable overrides."
+      }
+     ]
+    }
+   ],
+   "edges": [
+    [
+     "Documentation & Packaging",
+     "Core HTTP Interface",
+     1
+    ],
+    [
+     "Core HTTP Interface",
+     "Utilities & Helpers",
+     12
+    ],
+    [
+     "Transport & Authentication",
+     "Utilities & Helpers",
+     8
+    ],
+    [
+     "Transport & Authentication",
+     "Core HTTP Interface",
+     2
+    ],
+    [
+     "Core HTTP Interface",
+     "Transport & Authentication",
+     3
+    ],
+    [
+     "Utilities & Helpers",
+     "Core HTTP Interface",
+     2
+    ],
+    [
+     "Test Suite",
+     "Utilities & Helpers",
+     10
+    ],
+    [
+     "Test Suite",
+     "Core HTTP Interface",
+     9
+    ],
+    [
+     "Test Suite",
+     "Transport & Authentication",
+     2
+    ]
+   ],
+   "reading_order": [
+    "requests/__init__.py",
+    "requests/api.py",
+    "requests/sessions.py",
+    "requests/models.py",
+    "requests/adapters.py",
+    "requests/auth.py",
+    "requests/utils.py"
+   ],
+   "change_note": "Vendored dependencies (urllib3 and charade) were unbundled in favor of external packages with a compatibility shim, and tests were split from a monolithic test file into a modular `tests/` directory with a dedicated test server."
+  },
+  {
+   "sha": "3c7baaa0",
+   "date": "2026-10-26",
+   "n_files": 37,
+   "modules": [
+    {
+     "name": "Core HTTP Interface",
+     "summary": "Primary public API functions, session management, request/response models, and event hooks.",
+     "files": [
+      {
+       "path": "src/requests/__init__.py",
+       "summary": "Main package entry point exposing top-level API functions and metadata."
+      },
+      {
+       "path": "src/requests/__version__.py",
+       "summary": "Package version, author, license, and copyright metadata."
+      },
+      {
+       "path": "src/requests/api.py",
+       "summary": "Top-level HTTP method wrapper functions like get, post, and request."
+      },
+      {
+       "path": "src/requests/hooks.py",
+       "summary": "Event hook mechanism for attaching callbacks to request execution."
+      },
+      {
+       "path": "src/requests/models.py",
+       "summary": "Core Request, PreparedRequest, and Response object definitions."
+      },
+      {
+       "path": "src/requests/sessions.py",
+       "summary": "Session class for maintaining cookie state, connection pooling, and request configurations."
+      }
+     ]
+    },
+    {
+     "name": "Transport & Authentication",
+     "summary": "Transport adapters for urllib3 connection handling and authentication handlers.",
+     "files": [
+      {
+       "path": "src/requests/adapters.py",
+       "summary": "HTTPAdapter providing the transport layer interfacing with urllib3."
+      },
+      {
+       "path": "src/requests/auth.py",
+       "summary": "Authentication handlers such as HTTP basic and digest authentication."
+      }
+     ]
+    },
+    {
+     "name": "Utilities & Helpers",
+     "summary": "Helper routines, type definitions, custom data structures, compatibility layers, and exception classes.",
+     "files": [
+      {
+       "path": "src/requests/_internal_utils.py",
+       "summary": "Internal utility functions for string encoding and header validation."
+      },
+      {
+       "path": "src/requests/_types.py",
+       "summary": "Internal type aliases and protocol definitions used throughout the codebase."
+      },
+      {
+       "path": "src/requests/certs.py",
+       "summary": "Returns the default CA certificate bundle path."
+      },
+      {
+       "path": "src/requests/compat.py",
+       "summary": "Backwards compatibility aliases and dependency version detection."
+      },
+      {
+       "path": "src/requests/cookies.py",
+       "summary": "CookieJar compatibility layer and cookie management utilities."
+      },
+      {
+       "path": "src/requests/exceptions.py",
+       "summary": "Custom exception class hierarchy for network and protocol errors."
+      },
+      {
+       "path": "src/requests/help.py",
+       "summary": "System and dependency diagnostic helper used for bug reporting."
+      },
+      {
+       "path": "src/requests/packages.py",
+       "summary": "Backwards-compatibility module redirecting vendor package references."
+      },
+      {
+       "path": "src/requests/status_codes.py",
+       "summary": "Lookup dictionary mapping HTTP status code names to numeric values."
+      },
+      {
+       "path": "src/requests/structures.py",
+       "summary": "Specialized data structures such as CaseInsensitiveDict and LookupDict."
+      },
+      {
+       "path": "src/requests/utils.py",
+       "summary": "General public utility functions for parsing headers, proxies, URLs, and encodings."
+      }
+     ]
+    },
+    {
+     "name": "Documentation & Packaging",
+     "summary": "Project build configuration, setup metadata, and documentation theme files.",
+     "files": [
+      {
+       "path": "docs/_themes/flask_theme_support.py",
+       "summary": "Pygments syntax highlighting style for documentation generation."
+      },
+      {
+       "path": "docs/conf.py",
+       "summary": "Sphinx documentation configuration settings."
+      },
+      {
+       "path": "setup.py",
+       "summary": "Setuptools distribution setup and Python version check."
+      }
+     ]
+    },
+    {
+     "name": "Test Suite",
+     "summary": "Unit tests, low-level integration tests, test fixtures, and local HTTP test server.",
+     "files": [
+      {
+       "path": "tests/__init__.py",
+       "summary": "Test package initialization and warning filter setup."
+      },
+      {
+       "path": "tests/compat.py",
+       "summary": "Compatibility functions for test assertion code."
+      },
+      {
+       "path": "tests/conftest.py",
+       "summary": "Pytest fixtures for environment cleanup and URL formatting."
+      },
+      {
+       "path": "tests/test_adapters.py",
+       "summary": "Unit tests for HTTP transport adapter behaviors."
+      },
+      {
+       "path": "tests/test_help.py",
+       "summary": "Unit tests for diagnostic reporting utilities."
+      },
+      {
+       "path": "tests/test_hooks.py",
+       "summary": "Unit tests for request event hook dispatching."
+      },
+      {
+       "path": "tests/test_lowlevel.py",
+       "summary": "Low-level socket connection and chunked upload tests."
+      },
+      {
+       "path": "tests/test_packages.py",
+       "summary": "Tests for vendor package alias accessibility."
+      },
+      {
+       "path": "tests/test_requests.py",
+       "summary": "Comprehensive integration and unit test suite for requests features."
+      },
+      {
+       "path": "tests/test_structures.py",
+       "summary": "Unit tests for CaseInsensitiveDict and LookupDict behavior."
+      },
+      {
+       "path": "tests/test_testserver.py",
+       "summary": "Unit tests for the embedded local HTTP test server."
+      },
+      {
+       "path": "tests/test_utils.py",
+       "summary": "Unit tests for internal and public utility functions."
+      },
+      {
+       "path": "tests/testserver/__init__.py",
+       "summary": "Initialization module for the embedded test server package."
+      },
+      {
+       "path": "tests/testserver/server.py",
+       "summary": "Dummy socket/HTTP server implementation used in low-level tests."
+      },
+      {
+       "path": "tests/utils.py",
+       "summary": "Helper context managers for overriding environment variables in tests."
+      }
+     ]
+    }
+   ],
+   "edges": [
+    [
+     "Documentation & Packaging",
+     "Core HTTP Interface",
+     1
+    ],
+    [
+     "Core HTTP Interface",
+     "Utilities & Helpers",
+     17
+    ],
+    [
+     "Utilities & Helpers",
+     "Transport & Authentication",
+     1
+    ],
+    [
+     "Utilities & Helpers",
+     "Core HTTP Interface",
+     7
+    ],
+    [
+     "Transport & Authentication",
+     "Core HTTP Interface",
+     3
+    ],
+    [
+     "Transport & Authentication",
+     "Utilities & Helpers",
+     10
+    ],
+    [
+     "Core HTTP Interface",
+     "Transport & Authentication",
+     4
+    ],
+    [
+     "Test Suite",
+     "Utilities & Helpers",
+     12
+    ],
+    [
+     "Test Suite",
+     "Transport & Authentication",
+     3
+    ],
+    [
+     "Test Suite",
+     "Core HTTP Interface",
+     9
+    ]
+   ],
+   "reading_order": [
+    "src/requests/__init__.py",
+    "src/requests/api.py",
+    "src/requests/sessions.py",
+    "src/requests/models.py",
+    "src/requests/adapters.py",
+    "src/requests/utils.py"
+   ],
+   "change_note": "The codebase moved source modules under the standard `src/requests/` layout directory, added internal type definitions (`_types.py`) and diagnostic tools (`help.py`), and expanded unit test coverage across adapters and packages."
+  }
+ ]
+}
