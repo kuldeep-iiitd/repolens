@@ -30,7 +30,7 @@ flowchart LR
 ```
 
 1. **Snapshots from history**: clones the repo and picks 4 commits spread evenly across its history. Files are read straight from git objects, with no checkout needed.
-2. **Dependency graph**: reads import statements in each language and turns them into a file-to-file graph (NetworkX). No LLM is involved in this step.
+2. **Dependency graph**: reads import statements in each language and turns them into a file-to-file dependency graph. No LLM is involved in this step.
 3. **Long-context analysis**: for each snapshot, the full codebase (the start of every file plus the dependency graph) goes to Gemini in **a single call**, so the model sees the whole project at once instead of in fragments.
 4. **Structured output**: Gemini returns JSON (modules, file summaries, reading order and change notes). This is checked in code: file paths the model made up are dropped, and files it missed go into an "Other" module.
 5. **Module graph**: file-level imports are rolled up into module-to-module edges, weighted by the number of imports.
@@ -49,7 +49,7 @@ flowchart LR
 | Part | Tool |
 |---|---|
 | LLM | Google Gemini API (`google-genai`) |
-| Dependency graph | Regex-based import parsing, NetworkX-style edge list |
+| Dependency graph | Regex-based import parsing into a file → file edge list |
 | Visualization | pyvis |
 | UI | Streamlit |
 | Repo access | git (bare clone, `cat-file --batch`) |
